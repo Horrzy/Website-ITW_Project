@@ -1,0 +1,105 @@
+    display: flex;
+    position: fixed; /* Fixní pozice, aby menu zůstalo na místě */
+    left: -80px; /* Skryté menu mimo obrazovku */
+    width: 100px; /* Šířka menu */
+    background-color: rgba(0, 0, 0, 0.8); /* Poloprůhledné pozadí */
+    transition: left 0.5s ease-in-out; /* Plynulá animace při vysunutí */
+    margin-top: auto;
+
+        display: flex;
+    height: 650px;
+    background-image: url("../img/bg-header.png"), linear-gradient(180deg, transparent 0%, rgb(97, 20, 20) 5%, black 95%, transparent 100%);
+
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+
+
+
+
+
+
+
+
+    header{
+    background: 
+        linear-gradient(180deg, rgb(0, 0, 0) 20%, transparent 35%,  transparent 65%, rgb(0, 0, 0) 80% 85%, transparent 96%, #fffef0 100%),
+        linear-gradient(90deg, rgb(0, 0, 0) 25%, transparent 35%,  transparent 60%, rgb(0, 0, 0) 75%),
+        black url('../img/bg-header.png') no-repeat center; /* Obrázek na pozadí */
+    background-size: 100%, 100%, 50%, contain;
+    height: clamp(390px, 60vw, 650px);
+    width: 100%;
+    position: relative;
+    transition: background-size 0.5s ease-in-out
+}
+
+header:hover {
+    background-size: 100%, 100%, 52%, contain; /* Zvětšení obrázku na pozadí při najetí myší */
+}
+
+header:hover #header-title{
+    transform: scale(1.02); /* Zvětšení obsahu o 2 % při najetí myší */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(0, 0, 0, 0.5) 90%, transparent 100%); /* Poloprůhledná šedá vrstva */
+    z-index: 1; /* Zajišťuje, že překryvná vrstva je nad obsahem headeru */
+    pointer-events: none; /* Zajišťuje, že vrstva nebude blokovat interakce s obsahem */
+    opacity: 1; /* Výchozí neprůhlednost */
+    transition: opacity 0.5s ease-in-out; /* Přidání přechodu pro neprůhlednost */
+}
+
+
+header:hover::before {
+    opacity: 0; /* Změna neprůhlednosti při najetí myší */
+}
+
+#header-title{
+    
+    color: white;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#header-title{
+    background: 
+        linear-gradient(180deg, rgb(0, 0, 0) 10%, transparent 20%,  transparent 80%, rgb(0, 0, 0) 85% 95%, #fffef0 100%),
+        linear-gradient(90deg, rgb(0, 0, 0) 20%, transparent 30%,  transparent 70%, rgb(0, 0, 0) 80%),
+        black url('../img/bg-header.png') no-repeat center; /* Obrázek na pozadí */
+    background-size: 100%, 100%, auto 80%;
+    height: clamp(392px, 50vw, 605px);
+    width: 100%;
+
+    filter: brightness(50%);
+    transition: filter 0.5s ease-in-out, background-size 0.5s ease-in-out;
+    color: white;
+
+}
+
+
+#header-title:hover {
+    background-size: 100%, 100%, auto 82%;
+    filter: brightness(100%);
+}
